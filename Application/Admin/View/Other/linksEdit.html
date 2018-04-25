@@ -1,0 +1,40 @@
+
+<div class="bjui-pageContent">
+    <form action="__SELF__" id="j_custom_form" data-toggle="validate" data-alertmsg="false">
+        <table class="table table-condensed table-hover" width="100%">
+            <tbody>
+            <tr>
+                <td>
+                    <label for="a_title" class="control-label x85">网站名：</label>
+                    <input type="text" name="info[title]" id="a_title" value="{$Detail.title}" data-rule="required" size="30" class="required">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="a_url" class="control-label x85">网址：</label>
+                    <input type="text" name="info[url]" id="a_url" value="{$Detail.url}" data-rule="required;url" size="30" class="required">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="a_sort" class="control-label x85">权重：</label>
+                    <input type="text" name="info[sort]" id="a_sort" value="{$Detail.sort}" size="30" class="required">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="control-label x85">是否显示：</label>
+                    <input name="info[status]" type="radio" data-toggle="icheck" data-label="是" value="99" <eq name="Detail.status" value="99">checked</eq> >&nbsp;&nbsp;
+                    <input name="info[status]" type="radio" data-toggle="icheck" data-label="否" value="1" <eq name="Detail.status" value="1">checked</eq> >
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<div class="bjui-pageFooter">
+    <ul>
+        <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+        <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+    </ul>
+</div>

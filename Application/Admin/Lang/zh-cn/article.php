@@ -1,0 +1,20 @@
+<?php
+return array(
+    'thumb'                     =>  '缩略图',
+    'keyword'                   =>  '关键词',
+    'description'               =>  '描述',
+    'can_enter'                 =>  '还可输入',
+    'characters'                =>  '字符',
+    'content'                   =>  '内容',
+    'iscutcontent'              =>  '是否截取内容',
+    'characters_to_contents'    =>  '字符至内容摘要',
+    'iscutcotent_pic'           =>  '是否获取内容第',
+    'picture2thumb'             =>  '张图片作为标题图片',
+    'add_category'              =>  '添加栏目',
+    'category_cache'            =>  '更新栏目缓存',
+    'catname'                   =>  '栏目名称',
+    'category_type'             =>  '栏目类型',
+    'add_sub_category'          =>  '添加子栏目',
+    'category_type_page'        =>  '单网页',
+    'category_type_system'      =>  '内部栏目',
+);

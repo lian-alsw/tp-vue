@@ -1,0 +1,102 @@
+<div class="bjui-pageContent">
+    <form action="__SELF__" id="j_custom_form" data-toggle="validate" data-alertmsg="false">
+        <input type="hidden" name="catid" value="{$catid}">
+        <div style="margin:15px auto 0; width:450px;">
+            <fieldset>
+                <legend>栏目设置</legend>
+                <!-- Tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active"><a href="#tab_setting_1" role="tab" data-toggle="tab">基本选项</a></li>
+                    <li><a href="#tab_setting_2" role="tab" data-toggle="tab">模版设置</a></li>
+                    <li><a href="#tab_setting_3" role="tab" data-toggle="tab">SEO设置</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="tab_setting_1">
+                        <table class="table table-condensed table-hover" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <label class="control-label x85">上级栏目：</label>
+                                        <?php echo \Lain\Phpcms\form::select_category('', $parentid , 'data-toggle="selectpicker" name="info[parentid]"','≡ 作为一级栏目 ≡');?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="c_catname" class="control-label x85">栏目名称：</label>
+                                        <input type="text" id="c_catname" name="info[catname]" value="{$Detail.catname}" data-rule="required" size="15" class="required">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="c_url" class="control-label x85">拼音：</label>
+                                        <input type="text" id="c_url" name="info[url]" value="{$Detail.url}" size="15" class="required">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="j_custom_name" class="control-label x85">栏目类型：</label>
+                                        <empty name="Detail">
+                                        <select data-toggle="selectpicker" name="info[type]">
+                                            <option value="0" >内部栏目</option>
+                                            <option value="1" >单网页</option>
+                                        </select>
+                                        <else />
+                                        <input type="text" value="<eq name="Detail.type" value="1">单网页<else />内部栏目</eq>" disabled>
+                                        </empty>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="c_listorder" class="control-label x85">排序值：</label>
+                                        <input type="text" name="info[listorder]" id="c_listorder" value="{$Detail.listorder}" size="15">
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="tab_setting_2">
+                        <table class="table table-condensed table-hover" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td><label for="t_category_template" class="control-label x110">栏目首页模板：</label> <input type="text" id="t_category_template" name="setting[category_template]" value="{$setting.category_template}" size="15"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="t_list_template" class="control-label x110">栏目列表页模板：</label> <input type="text" id="t_list_template" name="setting[list_template]" value="{$setting.list_template}" size="15"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="t_show_template" class="control-label x110">内容页模板：</label> <input type="text" id="t_show_template" name="setting[show_template]" value="{$setting.show_template}" size="15"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="tab_setting_3">
+                        <table class="table table-condensed table-hover" width="100%">
+                            <tbody>
+                                <tr>
+                                    <td><label for="t_meta_title" class="control-label x110">栏目标题：</label> <input type="text" id="t_meta_title" name="setting[meta_title]" value="{$setting.meta_title}" size="15"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="t_meta_keywords" class="control-label x110">栏目关键词：</label> <input type="text" id="t_meta_keywords" name="setting[meta_keywords]" value="{$setting.meta_keywords}" size="15"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="t_meta_description" class="control-label x110">栏目描述：</label> <input type="text" id="t_meta_description" name="setting[meta_description]" value="{$setting.meta_description}" size="15"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        
+    </form>
+</div>
+<div class="bjui-pageFooter">
+    <ul>
+        <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+        <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+    </ul>
+</div>
